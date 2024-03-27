@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import './App.css'
+import FetchAll from './FetchAll'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <h1>hej</h1>
+      <FetchAll />
     </>
   )
 }
