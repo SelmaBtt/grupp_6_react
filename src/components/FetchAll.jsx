@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AuctionList from "./AuctionList";
 
 const FetchAll = () => {
     const[data, setData] = useState()
@@ -17,7 +18,7 @@ const FetchAll = () => {
 
     return(
         <>
-            <div>{JSON.stringify(data)}</div>
+            <AuctionList Auctions={data}/>
         </>
     )
 }
