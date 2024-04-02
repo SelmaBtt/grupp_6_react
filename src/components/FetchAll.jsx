@@ -12,13 +12,16 @@ const FetchAll = () => {
             }
             return response.json();
         })
-        .then(result => setData(result))
+        .then(result => {
+            setData(result)
+        })
         .catch(error => console.log('Error: ' + error))
     }, [])
 
     return(
         <>
             <AuctionList Auctions={data}/>
+            {/* <div><p>{JSON.stringify(data)}</p></div> */}
         </>
     )
 }
