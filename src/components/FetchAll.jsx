@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AuctionList from "./AuctionList";
 
 const FetchAll = () => {
     const[data, setData] = useState([])
@@ -21,12 +22,7 @@ const FetchAll = () => {
                 data && data.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
                     <div>
-                        <h3>{item.Title}</h3>
-                        <h3>{item.Description}</h3>
-                        <h3>{item.StartDate}</h3>
-                        <h4>{item.EndDate}</h4>
-                        <h4>{item.StartingPrice}</h4>
-                        <h4>{item.CreatedBy}</h4>
+                       
 
                     </div>
                 ))
