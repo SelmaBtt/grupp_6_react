@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AuctionList from "./AuctionList";
 
 const FetchAll = () => {
-    const[data, setData] = useState()
+    const[data, setData] = useState([])
 
     useEffect(() => {
         fetch('https://auctioneer.azurewebsites.net/auction/6fed')
@@ -12,16 +12,27 @@ const FetchAll = () => {
             }
             return response.json();
         })
-        .then(result => {
-            setData(result)
-        })
+        .then(result => setData(result))
         .catch(error => console.log('Error: ' + error))
     }, [])
 
     return(
         <>
-            <AuctionList Auctions={data}/>
-            {/* <div><p>{JSON.stringify(data)}</p></div> */}
+            {
+                data && data.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
+
+                    <div>
+                        <h2>{item.AuctionID}</h2>
+                        <h3>{item.Description}</h3>
+                        <h3>{item.StartDate}</h3>
+                        <h4>{item.EndDate}</h4>
+                        <h4>{item.GroupCode}</h4>
+                        <h4>{item.StartingPrice}</h4>
+                        <h4>{item.CreatedBy}</h4>
+
+                    </div>
+                ))
+            }
         </>
     )
 }
