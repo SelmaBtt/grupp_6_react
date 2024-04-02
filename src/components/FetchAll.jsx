@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import Search from "./Search";
 
 const FetchAll = () => {
-    const [data, setData] = useState() // For fetch data state
-    const [searchValue, setSearchValue] = useState() //State for input value
+    const[data, setData] = useState()
+
     useEffect(() => {
         fetch('https://auctioneer.azurewebsites.net/auction/6fed/')
             .then(response => {
@@ -18,9 +17,7 @@ const FetchAll = () => {
 
     return (
         <>
-            {/* <div>{JSON.stringify(data)}</div> */}
-            <Search setSearchValue={setSearchValue} />
-
+            <div>{JSON.stringify(data)}</div>
         </>
     )
 }

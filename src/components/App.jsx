@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import FetchAll from './FetchAll'
-import Search from './Search'
+import { Background } from './Background'
+import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <FetchAll />
+      <Background />
     </>
   )
 }
