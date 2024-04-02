@@ -18,6 +18,7 @@ const FetchAll = () => {
 
     return (
         <>
+            <Search setSearchValue={setSearchValue}/>
             {
                 data && data.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
