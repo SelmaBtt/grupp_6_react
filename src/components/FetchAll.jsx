@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Search from "./Search";
+import './AuctionList'
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]) // For fetch data state
@@ -33,11 +34,12 @@ const FetchAll = () => {
 
     return (
         <>
+        <div className="list-container">
             <Search setSearchValue={setSearchValue}/>
             {
                 filterAuctions && filterAuctions.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
-                    <div>
+                    <div className="item-container">
                        <h3>{item.Title}</h3>
                         <h3>{item.Description}</h3>
                         <h3>{item.StartDate}</h3>
@@ -48,6 +50,7 @@ const FetchAll = () => {
                     </div>
                 ))
             }
+        </div>
         </>
     )
 }
