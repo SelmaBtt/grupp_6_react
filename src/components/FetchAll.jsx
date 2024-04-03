@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import Search from "./Search";
 
 const FetchAll = () => {
-    const [data, setData] = useState() // For fetch data state
-    const [searchValue, setSearchValue] = useState([]) //State for input value
+    const [apiData, setApiData] = useState([]) // For fetch data state
+    const [searchValue, setSearchValue] = useState() //State for input value
+    const [filterAuctions, setFilterAuctions] = useState([]) // For fetch data state
+    
+    // Fetching api data
     useEffect(() => {
         fetch('https://auctioneer.azurewebsites.net/auction/6fed/')
             .then(response => {
@@ -12,15 +15,27 @@ const FetchAll = () => {
                 }
                 return response.json();
             })
-            .then(result => setData(result))
+            .then(result => {
+                setApiData(result)
+                setFilterAuctions(result)
+            })
             .catch(error => console.log('Error: ' + error))
+        }, [])
+        
+    useEffect(() => {
+        const filteredAuctions = apiData.filter((auction) => 
+            auction.Title.toLowerCase().includes(searchValue.toLowerCase())
+        )
+        
+        setFilterAuctions(filteredAuctions)
+
     }, [searchValue])
 
     return (
         <>
             <Search setSearchValue={setSearchValue}/>
             {
-                data && data.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
+                filterAuctions && filterAuctions.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
                     <div>
                        <h3>{item.Title}</h3>
