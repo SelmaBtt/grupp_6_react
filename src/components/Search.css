@@ -1,0 +1,25 @@
+.search-container {
+    position: relative;
+}
+
+.search {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the search bar appears on top */
+    background-color: white; /* Optionally set background color */
+    padding: 10px;
+}
+
+.searchbar {
+    /* Add styles for the search bar */
+}
+
+.searchresult {
+    /* Add styles for search results if needed */
+}
+
+.other-content {
+    /* Add styles for other content */
+}
