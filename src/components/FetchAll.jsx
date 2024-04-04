@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Search from "./Search";
-import './AuctionList'
+import { Link } from 'react-router-dom';
+import Auction from "./Auction";
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]) // For fetch data state
@@ -39,14 +39,13 @@ const FetchAll = () => {
             {
                 filterAuctions && filterAuctions.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
-                    <div className="item-container">
-                       <h3>{item.Title}</h3>
+                    <div>
+                        <Link to={`/Auction`}>{item.Title}</Link>
                         <h3>{item.Description}</h3>
                         <h3>{item.StartDate}</h3>
                         <h4>{item.EndDate}</h4>
                         <h4>{item.StartingPrice}</h4>
                         <h4>{item.CreatedBy}</h4>
-
                     </div>
                 ))
             }
@@ -54,5 +53,7 @@ const FetchAll = () => {
         </>
     )
 }
+
+
 
 export default FetchAll;
