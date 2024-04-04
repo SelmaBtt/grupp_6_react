@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Auction from "./Auction";
+import Search from './Search'
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]) // For fetch data state
