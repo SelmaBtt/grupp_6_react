@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import Auction from "./Auction";
 import Search from './Search'
 import './AuctionList.css'
+import Background from "./Background";
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]); // För hämtad data
@@ -42,6 +42,7 @@ const FetchAll = () => {
 
     return (
         <>
+        <Background />
            <div className="list-container">
               <Search setSearchValue={setSearchValue} />
               {filterAuctions.map((item) => (
