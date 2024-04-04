@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import { useRef } from "react";
+import './Search.css'
 
 const Search = ({ setSearchValue }) => {
     const searchText = useRef();

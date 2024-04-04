@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Search from "./Search";
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import Auction from "./Auction";
+import Search from './Search'
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]); // För hämtad data
