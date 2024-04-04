@@ -40,7 +40,7 @@ const FetchAll = () => {
                 filterAuctions && filterAuctions.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
                     <div>
-                        <Link to={`/Auction`}>{item.Title}</Link>
+                        <Link to={`/Auction/${item.AuctionID}`}>{item.Title}</Link>
                         <h3>{item.Description}</h3>
                         <h3>{item.StartDate}</h3>
                         <h4>{item.EndDate}</h4>

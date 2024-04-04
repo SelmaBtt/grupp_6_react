@@ -6,7 +6,7 @@ const Switch = () => {
     return(
         <Routes>
             <Route path='/' exact element={<FetchAll />}></Route>
-            <Route path='/Auction' element={<Auction />}></Route>
+            <Route path='/Auction/:id' element={<Auction />}></Route>
         </Routes>
     )
 }

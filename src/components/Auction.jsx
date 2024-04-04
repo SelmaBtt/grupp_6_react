@@ -1,6 +1,11 @@
+import { useParams } from "react-router-dom";
+
 const Auction = () => {
+  const { id } = useParams()
     return (
-      <h1>Auction</h1>
+      <>
+        <h1>HEj: {id} </h1>
+      </>
     )
 };
   
