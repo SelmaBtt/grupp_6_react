@@ -1,13 +1,10 @@
 import React from 'react'
 import './App.css'
 
-
-export const Background = () => {
+const Background = () => {
   return (
-    <div>
-      <nav className='nv'>
-      Auction
-      </nav>
-    </div>
+    <div><nav className='nv'/></div>
   )
 }
+
+export default Background
