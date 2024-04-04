@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <FetchAll />
+      {/* <FetchAll /> */}
       <Background />
       <Switch />
     </>

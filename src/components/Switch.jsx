@@ -1,9 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import Auction from './Auction'
+import FetchAll from './FetchAll';
 
 const Switch = () => {
     return(
         <Routes>
+            <Route path='/' exact element={<FetchAll />}></Route>
             <Route path='/Auction' element={<Auction />}></Route>
         </Routes>
     )
