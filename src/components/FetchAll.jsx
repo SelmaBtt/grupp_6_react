@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Auction from "./Auction";
 import Search from './Search'
+import './AuctionList.css'
 
 const FetchAll = () => {
     const [apiData, setApiData] = useState([]); // För hämtad data
@@ -41,18 +42,20 @@ const FetchAll = () => {
 
     return (
         <>
-            <Search setSearchValue={setSearchValue} />
-            {filterAuctions.map((item) => (
-                <div key={item.AuctionID}>
-                    <h3>{item.Title}</h3>
-                    <p>{item.Description}</p>
-                    <p>Startdatum: {new Date(item.StartDate).toLocaleString()}</p>
-                    <p>Slutdatum: {new Date(item.EndDate).toLocaleString()}</p>
-                    <p>Startpris: {item.StartingPrice}</p>
-                    <p>Skapad av: {item.CreatedBy}</p>
-                    {isAuctionOpen(item.EndDate) ? <p style={{color: 'green'}}>Auktionen är öppen</p> : <p style={{color: 'red'}}>Auktionen är avslutad</p> }
-                </div>
-            ))}
+           <div className="list-container">
+              <Search setSearchValue={setSearchValue} />
+              {filterAuctions.map((item) => (
+                  <div key={item.AuctionID}>
+                      <h3>{item.Title}</h3>
+                      <p>{item.Description}</p>
+                      <p>Startdatum: {new Date(item.StartDate).toLocaleString()}</p>
+                      <p>Slutdatum: {new Date(item.EndDate).toLocaleString()}</p>
+                      <p>Startpris: {item.StartingPrice}</p>
+                      <p>Skapad av: {item.CreatedBy}</p>
+                      {isAuctionOpen(item.EndDate) ? <p style={{color: 'green'}}>Auktionen är öppen</p> : <p style={{color: 'red'}}>Auktionen är avslutad</p> }
+                  </div>
+                ))}
+           </div>
         </>
     );
 };
