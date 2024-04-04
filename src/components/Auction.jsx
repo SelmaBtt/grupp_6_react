@@ -1,5 +1,7 @@
 const Auction = () => {
-    return <h1>Auction</h1>;
-  };
+    return (
+      <h1>Auction</h1>
+    )
+};
   
-  export default Auction;
+export default Auction;
