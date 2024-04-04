@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import FetchAll from './FetchAll'
-import { Background } from './Background'
+
 import './App.css'
 
 function App() {
@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <FetchAll />
-      <Background />
     </>
   )
 }
