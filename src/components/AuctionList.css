@@ -1,16 +1,15 @@
 .list-container {
     display: flex; 
-    flex-wrap: wrap; 
-    align-items: center;
-    justify-content: space-between;
-   
-}
-
-.item-container {
-    flex-basis: calc(33.33% - 100px); /* Set flex-basis to 33.33% minus margin */
-    margin-bottom: 20px; /* Add margin between rows */
+    flex-wrap: wrap;  
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100px;
+}
+
+.auction-box {
+    flex: 400px; 
+    margin: 5px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

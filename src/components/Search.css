@@ -10,6 +10,7 @@
     z-index: 1; 
     background-color: white; 
     padding: 10px;
+    text-align: center; 
+    background: transparent;
+    margin: 10px;
 }
-
-
