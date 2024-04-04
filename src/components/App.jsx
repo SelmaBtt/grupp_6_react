@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import FetchAll from './FetchAll'
-import Background from './Background'
-
 import './App.css'
 import Switch from './Switch'
 
@@ -11,7 +9,6 @@ function App() {
   return (
     <>
       {/* <FetchAll /> */}
-      <Background />
       <Switch />
     </>
   )
