@@ -18,7 +18,7 @@ const FetchAll = () => {
 
     // Hämta data från API:et
     useEffect(() => {
-        fetch('https://auctioneer.azurewebsites.net/auction/6fed/')
+        fetch('https://auctioneer2.azurewebsites.net/auction/6fed/')
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error fetching auctions');
