@@ -1,6 +1,7 @@
 import { useParams, useLocation } from "react-router-dom";
 import FetchBids from "./FetchBids";
 
+
 const Auction = () => {
 
     const { id } = useParams()

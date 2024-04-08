@@ -20,10 +20,11 @@ const Search = ({ setSearchValue }) => {
 
     return (
         <div className="search">
-            <div className="searcbar">
-                <input type="text" className="" placeholder="Skriv in ditt sökord här!" ref={searchText}></input>
+            <div className="searchbar">
+                <input type="text" className="search-input" placeholder="Skriv in ditt sökord här!" ref={searchText}></input>
+            
+            <button onClick={() => setSearchValue(searchText.current.value)} className="search-button" variant="primary" size="lg">Sök</button>
             </div>
-            <Button onClick={() => setSearchValue(searchText.current.value)} className="d-block w-50 mx-auto mt-2" variant="primary" size="lg">Sök</Button>
             <div className="searchresult">
 
             </div>
