@@ -34,11 +34,11 @@ const FetchAll = () => {
 
     
     useEffect(() => {
-        const filteredAuctions = apiData.filter(auction =>
+        const auctions = apiData.filter(auction =>
             auction.Title.toLowerCase().includes(searchValue.toLowerCase()) &&
             (isAuctionOpen(auction.EndDate) || searchValue) // Endast öppna auktioner visas på startsidan, alla auktioner visas när man söker
         );
-        setAuctions(filteredAuctions);
+        setAuctions(auctions);
     }, [searchValue, apiData]);
     
     return (
@@ -46,7 +46,7 @@ const FetchAll = () => {
         <Background />
            <div className="list-container">
               <Search setSearchValue={setSearchValue} />
-              {filterAuctions && filterAuctions.map((item) => (
+              {auctions && auctions.map((item) => (
                 <Link to={`/Auction/${item.AuctionID}`} state={{ item }}>
                     <div className="auction-box" key={item.AuctionID}>
                       <h3>{item.Title}</h3>
