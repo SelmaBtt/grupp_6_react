@@ -5,9 +5,9 @@ import './AuctionList.css'
 import Background from "./Background";
 
 const FetchAll = () => {
-    const [apiData, setApiData] = useState([]); // För hämtad data
-    const [searchValue, setSearchValue] = useState(""); // State för sökning
-    const [filterAuctions, setFilterAuctions] = useState([]); // För filtrerad data
+    const [apiData, setApiData] = useState([]); 
+    const [auctions, setAuctions] = useState([]); 
+    const [searchValue, setSearchValue] = useState(""); 
 
     // Funktion för att kontrollera om auktionen är öppen
     const isAuctionOpen = (endDate) => {
@@ -16,7 +16,7 @@ const FetchAll = () => {
         return auctionEndDate > currentDate;
     };
 
-    // Hämta data från API:et
+    
     useEffect(() => {
         fetch('https://auctioneer2.azurewebsites.net/auction/6fed/')
             .then(response => {
@@ -27,19 +27,20 @@ const FetchAll = () => {
             })
             .then(result => {
                 setApiData(result);
-                setFilterAuctions(result); // Visa alla auktioner initialt
+                setAuctions(result); 
             })
             .catch(error => console.error('Error: ', error));
     }, []);
 
+    
     useEffect(() => {
-        // Filtrera auktioner baserat på sökning
         const filteredAuctions = apiData.filter(auction =>
-            auction.Title.toLowerCase().includes(searchValue.toLowerCase())
+            auction.Title.toLowerCase().includes(searchValue.toLowerCase()) &&
+            (isAuctionOpen(auction.EndDate) || searchValue) // Endast öppna auktioner visas på startsidan, alla auktioner visas när man söker
         );
-        setFilterAuctions(filteredAuctions);
+        setAuctions(filteredAuctions);
     }, [searchValue, apiData]);
-
+    
     return (
         <>
         <Background />
@@ -58,9 +59,10 @@ const FetchAll = () => {
                   </div>
                 </Link>
                 ))}
-           </div>
+            </div>
         </>
     );
 };
+
 
 export default FetchAll;

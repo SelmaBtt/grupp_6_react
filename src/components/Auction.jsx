@@ -1,4 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
+import FetchBids from "./FetchBids";
 
 const Auction = () => {
 
@@ -18,6 +19,7 @@ const Auction = () => {
             <h4>{item.EndDate}</h4>
             <h4>{item.StartingPrice}</h4>
             <h4>{item.CreatedBy}</h4>
+            <FetchBids auctionId={item.AuctionID} />
           </div>
         )}
       </>
