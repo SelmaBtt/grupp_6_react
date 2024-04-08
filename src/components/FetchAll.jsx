@@ -43,19 +43,21 @@ const FetchAll = () => {
     
     return (
         <>
-            <Background />
-            <div className="list-container">
-                <Search setSearchValue={setSearchValue} />
-                {auctions.map((item) => (
+        <Background />
+           <div className="list-container">
+              <Search setSearchValue={setSearchValue} />
+              {filterAuctions && filterAuctions.map((item) => (
+                <Link to={`/Auction/${item.AuctionID}`} state={{ item }}>
                     <div className="auction-box" key={item.AuctionID}>
-                        <h3><Link to={`/Auction/${item.AuctionID}`} state={{ item }}>{item.Title}</Link></h3>
-                        <p>{item.Description}</p>
-                        <p>Startdatum: {new Date(item.StartDate).toLocaleString()}</p>
-                        <p>Slutdatum: {new Date(item.EndDate).toLocaleString()}</p>
-                        <p>Startpris: {item.StartingPrice}</p>
-                        <p>Skapad av: {item.CreatedBy}</p>
-                        {isAuctionOpen(item.EndDate) ? <p style={{ color: 'green' }}>Auktionen är öppen</p> : <p style={{ color: 'red' }}>Auktionen är avslutad</p>}
-                    </div>
+                      <h3>{item.Title}</h3>
+                      <p>{item.Description}</p>
+                      <p>Startdatum: {new Date(item.StartDate).toLocaleString()}</p>
+                      <p>Slutdatum: {new Date(item.EndDate).toLocaleString()}</p>
+                      <p>Startpris: {item.StartingPrice}</p>
+                      <p>Skapad av: {item.CreatedBy}</p>
+                      {isAuctionOpen(item.EndDate) ? <p style={{color: 'green'}}>Auktionen är öppen</p> : <p style={{color: 'red'}}>Auktionen är avslutad</p> }
+                  </div>
+                </Link>
                 ))}
             </div>
         </>
