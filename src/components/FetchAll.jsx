@@ -36,11 +36,11 @@ const FetchAll = () => {
     useEffect(() => {
         const filteredAuctions = apiData.filter(auction =>
             auction.Title.toLowerCase().includes(searchValue.toLowerCase()) &&
-            isAuctionOpen(auction.EndDate) // Endast öppna auktioner visas
+            (isAuctionOpen(auction.EndDate) || searchValue) // Endast öppna auktioner visas på startsidan, alla auktioner visas när man söker
         );
         setAuctions(filteredAuctions);
     }, [searchValue, apiData]);
-
+    
     return (
         <>
             <Background />
