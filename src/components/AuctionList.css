@@ -1,9 +1,10 @@
 .list-container {
     display: flex; 
     flex-wrap: wrap;  
-    padding: 10px;
+    padding: 1px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 .auction-box {
@@ -12,4 +13,17 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: rgb(255, 230, 129);
+}
+
+.auction-box h3 {
+    background-color: rgb(255, 230, 129);
+}
+
+.auction-box a {
+    background-color: rgb(255, 230, 129);
+}
+
+.auction-box p {
+    background-color: rgb(255, 230, 129);
 }

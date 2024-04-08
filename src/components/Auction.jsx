@@ -1,5 +1,6 @@
 import { useParams, useLocation } from "react-router-dom";
 
+
 const Auction = () => {
 
     const { id } = useParams()

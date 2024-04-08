@@ -1,5 +1,6 @@
 .search-container {
     position: relative;
+    width: 100%;
 }
 
 .search {
@@ -12,5 +13,32 @@
     padding: 10px;
     text-align: center; 
     background: transparent;
-    margin: 10px;
+    width: 50%;
+    box-sizing: border-box;    
+}
+
+.search-input {
+    width: 98%;
+    padding: 3px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.search-button {
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 4px;
+}
+
+.search-button:hover {
+    background-color: darkgrey;
+}
+
+.searchbar {
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    background-color: rgb(56, 56, 56);
 }
