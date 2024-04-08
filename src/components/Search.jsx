@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom"
 import { useRef } from "react";
 import './Search.css'
 
@@ -26,6 +27,7 @@ const Search = ({ setSearchValue }) => {
             <div className="searchresult">
 
             </div>
+            <Link to="/Form">Lägg till auktion</Link>
         </div>
     );
 }
