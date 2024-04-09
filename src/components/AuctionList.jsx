@@ -1,7 +1,7 @@
 import './AuctionList.css'
 
 const AuctionList = (Auctions) => {
-    const data = Auctions; // Behöver inte ha data som värde, du kan skriva direkt på rad 7: Auctions && Auctions.length > 0, Auctions.map
+    const data = Auctions.filter(auction => auction.bid && auction.bid.length > 0); // Behöver inte ha data som värde, du kan skriva direkt på rad 7: Auctions && Auctions.length > 0, Auctions.map
     if (data){console.log("true")} else {console.log("false")}
     return (
         <>
