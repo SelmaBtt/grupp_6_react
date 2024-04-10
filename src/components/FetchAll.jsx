@@ -17,6 +17,8 @@ const FetchAll = () => {
     };
 
     
+
+    
     useEffect(() => {
         fetch('https://auctioneer2.azurewebsites.net/auction/6fed/')
             .then(response => {
@@ -40,6 +42,8 @@ const FetchAll = () => {
         );
         setAuctions(auctions);
     }, [searchValue, apiData]);
+
+     
     
     return (
         <>
