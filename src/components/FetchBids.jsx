@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const FetchBids = ({ auctionId }) => {
     const [bids, setBids] = useState([]);
@@ -20,14 +20,14 @@ const FetchBids = ({ auctionId }) => {
     return (
         <>
             <h2>Bud</h2>
-            <ul>
+            <div>
                 {bids.map(bid => (
-                    <li key={bid.BidID}>
+                    <p key={bid.BidID}>
                         <p>{bid.Amount} kr </p>
                         <p>{bid.Bidder}</p>
-                    </li>
+                    </p>
                 ))}
-            </ul>
+            </div>
         </>
     );
 };
