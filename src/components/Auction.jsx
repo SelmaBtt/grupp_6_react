@@ -16,7 +16,7 @@ const Auction = () => {
       <>
 
         {item && ( // Render item if it exists
-          <div style={{color: "white"}}>
+          <div style={{color: "black" }}>
             <h2>{item.Title}</h2>
             <h3>{item.Description}</h3>
             <h3>{item.StartDate}</h3>
