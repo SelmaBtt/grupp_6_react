@@ -1,5 +1,5 @@
-import {useEffect, useState,} from "react";
 
+import {useEffect, useState } from "react";
 
 const FetchBids = ({ auctionId }) => {
     const [bids, setBids] = useState([]);
@@ -37,13 +37,14 @@ const FetchBids = ({ auctionId }) => {
     return (
         <>
             <h2>Bud</h2>
-            <ul>
+            <div>
                 {bids.map(bid => (
-                    <li key={bid.BidID}>
+                    <p key={bid.BidID}>
                         <p>{bid.Amount} kr </p>
                         <p>{bid.Bidder}</p>
-                    </li>
+                    </p>
                 ))}
+
             </ul>
             {bids.length === 0 && <div>Det finns inga bud ännu, du kan ta bort auktionen
             <button onClick={buttonHandler}>Delete</button></div>} 

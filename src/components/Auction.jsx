@@ -13,6 +13,7 @@ const Auction = () => {
 
     // let today = new Date().to
     return (
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center", textAlign: "center",}}>
       <>
 
         {item && ( // Render item if it exists
@@ -37,6 +38,7 @@ const Auction = () => {
           </div>
         )}
       </>
+      </div>
     )
 };
   
