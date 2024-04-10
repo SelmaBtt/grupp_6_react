@@ -27,7 +27,7 @@ const Auction = () => {
             {/* Om slutdatum är förbi rendera "NY COMPONENT"
             Annars Rendera FetchBids och AddBids */}
 
-            {item.EndDate > new Date().toLocaleString() ? (
+            {item.EndDate > new Date().toISOString() ? (
               <>
                 <FetchBids auctionId={item.AuctionID} />
                 <AddBids auctionId={item.AuctionID}/>  
