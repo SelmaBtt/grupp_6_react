@@ -4,8 +4,7 @@ function AddBids({auctionId}) {
     const [bidAmount, setBidAmounts] = useState("")
     const [Bidder, setBidder] = useState("")
 
-    const buttonHandler = async (e) => {
-      e.preventDefault();
+    const buttonHandler = async () => {
   
       try {
           const response = await fetch(`https://auctioneer2.azurewebsites.net/bid/6fed/`, {
@@ -23,6 +22,7 @@ function AddBids({auctionId}) {
             throw new Error("Error placing bid");
               
           }
+          window.location.reload();
       } catch (error) {
           alert("Budet är för lågt");
       }
