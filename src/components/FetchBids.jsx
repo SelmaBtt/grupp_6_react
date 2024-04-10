@@ -44,8 +44,7 @@ const FetchBids = ({ auctionId }) => {
                         <p>{bid.Bidder}</p>
                     </p>
                 ))}
-
-            </ul>
+            </div>
             {bids.length === 0 && <div>Det finns inga bud ännu, du kan ta bort auktionen
             <button onClick={buttonHandler}>Delete</button></div>} 
         </>
