@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import './Form.css'
 
 const Form = () => {
     const [title, setTitle] = useState("")
@@ -30,7 +31,7 @@ const Form = () => {
             <h1>Lägg till auktion</h1>
             <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
                 <label>Auktions titel</label>
-                <input
+                <input 
                     type="text"
                     value={title} 
                     onChange={(e) => setTitle(e.target.value)}

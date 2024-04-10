@@ -1,0 +1,35 @@
+* {
+    background-color: rgb(255, 230, 129);
+}
+input {
+    margin: 5px;
+    background-color: white;
+}
+
+label {
+    margin: 5px;
+}
+
+.div {
+    margin-top: 100px;
+}
+
+button {
+    border-radius: 10px;
+    width: 80%;
+    height: 2em;
+    margin-top: 20px;
+    background-color: lightgrey;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+textarea {
+    background-color: white;
+}
+
+div {
+    margin-top: 125px;
+}

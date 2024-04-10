@@ -47,8 +47,8 @@ const FetchAll = () => {
            <div className="list-container">
               <Search setSearchValue={setSearchValue} />
               {auctions && auctions.map((item) => (
-                <Link to={`/Auction/${item.AuctionID}`} state={{ item }}>
-                    <div className="auction-box" key={item.AuctionID}>
+                <Link to={`/Auction/${item.AuctionID}`} state={{ item }} className="auction-box">
+                    <div key={item.AuctionID}>
                       <h3>{item.Title}</h3>
                       <p>{item.Description}</p>
                       <p>Startdatum: {new Date(item.StartDate).toLocaleString()}</p>
