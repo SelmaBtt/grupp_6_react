@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+
+import {useEffect, useState } from "react";
 
 const FetchBids = ({ auctionId }) => {
     const [bids, setBids] = useState([]);
+
+   
 
     useEffect(() => {
         fetch(`https://auctioneer2.azurewebsites.net/bid/6fed/${auctionId}`)
@@ -17,6 +20,20 @@ const FetchBids = ({ auctionId }) => {
             .catch(error => console.error('Error: ', error));
     }, [auctionId]);
 
+  
+
+    let buttonHandler = () =>
+    {
+        fetch(`https://auctioneer2.azurewebsites.net/auction/6fed/${auctionId}`,
+        {
+        method: 'DELETE' 
+        }).then(() =>
+        {
+        })
+
+
+    }
+
     return (
         <>
             <h2>Bud</h2>
@@ -27,7 +44,10 @@ const FetchBids = ({ auctionId }) => {
                         <p>{bid.Bidder}</p>
                     </p>
                 ))}
-            </div>
+
+            </ul>
+            {bids.length === 0 && <div>Det finns inga bud ännu, du kan ta bort auktionen
+            <button onClick={buttonHandler}>Delete</button></div>} 
         </>
     );
 };
