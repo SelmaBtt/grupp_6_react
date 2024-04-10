@@ -45,6 +45,7 @@ function AddBids({auctionId}) {
             onChange={(e) => setBidder(e.target.value)}
             required
         />
+        <br />
       <button onClick={buttonHandler}>Lägg bud</button>
     </div>
   )

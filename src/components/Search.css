@@ -47,6 +47,7 @@
 .search a{
     color: white;
     text-decoration: none;
+    background-color: rgb(56, 56, 56); 
 }
 .search a:hover{
     color: darkgrey;
