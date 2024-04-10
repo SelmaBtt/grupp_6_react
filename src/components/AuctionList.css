@@ -4,26 +4,20 @@
     padding: 1px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
 }
 
 .auction-box {
-    flex: 400px; 
     margin: 5px; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 30%;
     background-color: rgb(255, 230, 129);
+    border-radius: 10px;
+    text-decoration: none;
 }
 
-.auction-box h3 {
+.auction-box *{
     background-color: rgb(255, 230, 129);
-}
-
-.auction-box a {
-    background-color: rgb(255, 230, 129);
-}
-
-.auction-box p {
-    background-color: rgb(255, 230, 129);
+    color: #000;
 }

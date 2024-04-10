@@ -14,7 +14,7 @@
     text-align: center; 
     background: transparent;
     width: 50%;
-    box-sizing: border-box;    
+    box-sizing: border-box;  
 }
 
 .search-input {
@@ -22,11 +22,12 @@
     padding: 3px;
     background-color: #fff;
     text-align: center;
+    border-radius: 10px;
 }
 
 .search-button {
     width: 100%;
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(255, 230, 129);
     border-radius: 10px;
     margin-top: 8px;
     padding: 4px;
@@ -41,4 +42,12 @@
     margin-top: 10px;
     box-sizing: border-box;
     background-color: rgb(56, 56, 56);
+}
+
+.search a{
+    color: white;
+    text-decoration: none;
+}
+.search a:hover{
+    color: darkgrey;
 }

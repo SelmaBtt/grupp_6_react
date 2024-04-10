@@ -1,11 +1,11 @@
-import './AuctionList.css'
+// import './AuctionList.css'
 
 const AuctionList = (Auctions) => {
     const data = Auctions.filter(auction => auction.bid && auction.bid.length > 0); // Behöver inte ha data som värde, du kan skriva direkt på rad 7: Auctions && Auctions.length > 0, Auctions.map
     if (data){console.log("true")} else {console.log("false")}
     return (
         <>
-        <div className="list-container">
+        {/* <div className="list-container"> */}
             {
                 data && data.map((item) => ( // Lägga till conditional rendering så att den vet när den ska mappa tror jag 
 
@@ -21,7 +21,7 @@ const AuctionList = (Auctions) => {
                     </div>
                 ))
             }
-        </div>
+        {/* </div> */}
         </>
 
 

@@ -14,7 +14,6 @@ const Auction = () => {
     // let today = new Date().to
     return (
       <>
-        <h1>HEj: {id} </h1>
 
         {item && ( // Render item if it exists
           <div style={{color: "white"}}>

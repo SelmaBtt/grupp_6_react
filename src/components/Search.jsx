@@ -5,18 +5,6 @@ import './Search.css'
 
 const Search = ({ setSearchValue }) => {
     const searchText = useRef();
-    /* const [searchauction, setAuction] = useState(null) */
-    // const searching = () => {
-    //     setSearchValue(searchText.current.value)
-        
-    //     /* fetch('')
-    //         .then(res => {
-    //             return res.json();
-    //         })
-    //         .then(data => {
-    //             setAuction(data)
-    //         }); */
-    // }
 
     return (
         <div className="search">
