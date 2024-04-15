@@ -3,6 +3,7 @@ import { useState } from 'react'
 function AddBids({auctionId}) {
     const [bidAmount, setBidAmounts] = useState("")
     const [Bidder, setBidder] = useState("")
+    const [errorMessage, setErrorMessage] = useState('');
 
     const buttonHandler = async () => {
   
@@ -24,7 +25,7 @@ function AddBids({auctionId}) {
           }
           window.location.reload();
       } catch (error) {
-          alert("Budet är för lågt");
+          setErrorMessage("Budet är för lågt");
       }
   }
   
@@ -46,6 +47,7 @@ function AddBids({auctionId}) {
             required
         />
         <br />
+        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <button onClick={buttonHandler}>Lägg bud</button>
     </div>
   )
