@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import './Form.css'
 
 const Form = () => {
+    const navigate = useNavigate(); // Using useNavigate hook to navigate programmatically
     const [title, setTitle] = useState("")
     const [desciption, setDesciption] = useState("")
     const [startBid, setStartBid] = useState("")
     const [seller, setSeller] = useState("")
     const [endDate, setEndDate] = useState("")
+    const [submitted, setSubmitted] = useState(false); // State to track form submission
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +25,11 @@ const Form = () => {
                 EndDate: endDate,
                 CreatedBy: seller,
             })
-        })
+        }).then(() => {
+            // After successful submission, navigate back to home page
+            navigate('/');
+            setSubmitted(true); // Set submitted to true after successful submission
+        });
     }
 
     return (
@@ -63,6 +69,8 @@ const Form = () => {
                 />
                 <button>Lägg till Auktion</button>
             </form>
+            {/* Button to navigate back to the home page, only visible if the form has been submitted */}
+            {submitted && <button onClick={() => navigate('/')}>Tillbaka till startsidan</button>}
         </div>
     )
 }
