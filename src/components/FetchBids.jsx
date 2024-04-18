@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './AuctionList.css';
 
 const FetchBids = ({ auctionId }) => {
+    const navigate = useNavigate()
     const [bids, setBids] = useState([]);
 
     useEffect(() => {
@@ -20,10 +21,12 @@ const FetchBids = ({ auctionId }) => {
     }, [auctionId]);
 
     let buttonHandler = () => {
+        navigate('/')
+        alert("Auktion borttagen, omdirigeras till startsidan.")
         fetch(`https://auctioneer2.azurewebsites.net/auction/6fed/${auctionId}`, {
             method: 'DELETE'
         }).then(() => {
-            // Handling efter radering av auktionen
+           
         });
     };
 
